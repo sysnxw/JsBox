@@ -10,14 +10,14 @@ const signBodyVal = senku.getdata(signbodyKey)
 sign()
 
 function sign() {
-  const url = { url: signurlVal, headers: JSON.parse(signheaderVal), body: signBodyVal }
-  senku.post(url, (error, response, data) => {
+  const url = { url: signurlVal, headers: JSON.parse(signheaderVal), /*body: signBodyVal*/ }
+  senku.get(url, (error, response, data) => {
     const result = JSON.parse(data)
     const total = result.data['task.revisionSignInGetAward'].total
     const ret = result.data['task.revisionSignInGetAward'].ret
-    let subTitle = ``
-    let detail = ``
-    if (total != 0) {
+    let subTitle = `执行了但是不知道是否正常`
+    let detail = `不知道哦`
+    /*if (total != 0) {
       const num = result.data['task.revisionSignInGetAward'].awards[0].num
       subTitle = `签到结果: 成功`
       detail = `获得鲜花: ${num}朵,已连续签到:${total}天`
@@ -25,7 +25,7 @@ function sign() {
       subTitle = `签到结果: 成功 (重复签到)`
     } else {
       subTitle = `签到结果: 失败`
-    }
+    }*/
     senku.msg(cookieName, subTitle, detail)
     senku.done()
   })
