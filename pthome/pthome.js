@@ -10,7 +10,7 @@ const signBodyVal = senku.getdata(signbodyKey)
 sign()
 
 function sign() {
-  const url = { url: signurlVal, headers: JSON.parse(signheaderVal), /*body: signBodyVal*/ }
+  const url = { url: signurlVal, headers: JSON.parse(signheaderVal), body: signBodyVal }
   senku.get(url, (error, response, data) => {
     const result = JSON.parse(data)
     //console.log(result) 
