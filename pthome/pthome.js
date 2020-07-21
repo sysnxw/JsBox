@@ -13,7 +13,7 @@ function sign() {
   const url = { url: signurlVal, headers: JSON.parse(signheaderVal), /*body: signBodyVal*/ }
   senku.get(url, (error, response, data) => {
     const result = JSON.parse(data)
-    console.log(result) 
+    //console.log(result) 
     //const total = result.data['task.revisionSignInGetAward'].total
     //const ret = result.data['task.revisionSignInGetAward'].ret
     let subTitle = `执行了但是不知道是否正常`
