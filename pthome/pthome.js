@@ -17,16 +17,15 @@ function sign() {
       console.log(`${title}, ${subTitle}, ${detail}`)
       $notification.post(title, subTitle, detail)
     } else {
-      //signMission(data.match(/<input[^>]*\/mission\/daily\/redeem\?once=(\d+)[^>]*>/)[1])
-      console.log(`${title}, ${subTitle}, ${detail}`)
+      signMission()
     }
   })
   $done({})
 }
 
-function signMission(code) {
+function signMission() {
   let url = {
-    url: `https://www.v2ex.com/mission/daily/redeem?once=${code}`,
+    url: `https://www.pthome.net/attendance.php`,
     headers: { Cookie: cookieVal }
   }
   $httpClient.get(url, (error, response, data) => {
