@@ -17,7 +17,7 @@ function sign() {
       console.log(`${title}, ${subTitle}, ${detail}`)
       $notification.post(title, subTitle, detail)
     } else {
-      signMission()
+      signMission()//找到点击签到的点击，配合下面的signMission（code）来真正签到
     }
   })
   $done({})
