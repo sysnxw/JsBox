@@ -1,7 +1,7 @@
 const cookieName = 'pthome'
-const signurlKey = 'senku_signurl_qmkg'
-const signheaderKey = 'senku_signheader_qmkg'
-const signbodyKey = 'senku_signbody_qmkg'
+const signurlKey = 'senku_signurl_pthome'
+const signheaderKey = 'senku_signheader_pthome'
+const signbodyKey = 'senku_signbody_pthome'
 const senku = init()
 
 const requrl = $request.url
