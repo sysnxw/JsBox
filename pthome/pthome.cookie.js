@@ -8,17 +8,17 @@ const requrl = $request.url
 if ($request && $request.method != 'OPTIONS') {
   const signurlVal = requrl
   const signheaderVal = JSON.stringify($request.headers)
-  //const signbodyVal = $request.body
-  //const cmd = JSON.parse($request.body).cmd
-  //senku.log(`signurlVal:${signurlVal}`)
-  //senku.log(`signheaderVal:${signheaderVal}`)
-  //senku.log(`signbodyVal:${signbodyVal}`)
+  const signbodyVal = $request.body
+  const cmd = JSON.parse($request.body).cmd
+  senku.log(`signurlVal:${signurlVal}`)
+  senku.log(`signheaderVal:${signheaderVal}`)
+  senku.log(`signbodyVal:${signbodyVal}`)
   if (signurlVal) senku.setdata(signurlVal, signurlKey)
   if (signheaderVal) senku.setdata(signheaderVal, signheaderKey)
-  //if (signbodyVal && cmd=='task.revisionSignInGetAward') {
-    //senku.setdata(signbodyVal, signbodyKey)
+  if (signbodyVal && cmd=='task.revisionSignInGetAward') {
+    senku.setdata(signbodyVal, signbodyKey)
     senku.msg(cookieName, `获取Cookie: 成功`, ``)
-  //}  
+  }  
 }
 
 function init() {
