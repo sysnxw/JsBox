@@ -4,7 +4,7 @@ const cookieVal = $persistentStore.read(cookieKey)
 
 function sign() {
   let url = {
-    url: `https://pt.btschool.club/index.php?action=addbonus`,
+    url: `https://pt.btschool.club/index.php`,
     headers: {
       Cookie: cookieVal
     }
