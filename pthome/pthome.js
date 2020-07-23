@@ -10,7 +10,7 @@ function sign() {
     }
   }
   $httpClient.get(url, (error, response, data) => {
-    if (data.indexOf('(签到已得') >= 0) {
+    if (data.indexOf('签到得魔力') <= 0) {
       let title = `${cookieName}`
       let subTitle = `签到结果: 签到跳过`
       let detail = `今天已经签过了`
@@ -29,7 +29,7 @@ function signMission() {
     headers: { Cookie: cookieVal }
   }
   $httpClient.get(url, (error, response, data) => {
-    if (data.indexOf('(签到已得') >= 0) {
+    if (data.indexOf('签到得魔力') <= 0) {
       let title = `${cookieName}`
       let subTitle = `签到结果: 签到成功`
       let detail = ``
