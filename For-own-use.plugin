@@ -1,3 +1,5 @@
+#use https://github.com/GeQ1an/Rules/blob/master/Loon/Loon.conf
+
 [Script]
 # Display commodity historical price
 # > JD - api.m.jd.com
